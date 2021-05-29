@@ -1,6 +1,6 @@
 # 服务端口
 server:
-  port: 6667
+  port: 6670
 #spring 配置
 spring:
   cloud:

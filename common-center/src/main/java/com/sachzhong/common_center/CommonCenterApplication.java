@@ -1,4 +1,4 @@
-package com.sachzhong.nacos_config;
+package com.sachzhong.common_center;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,7 +1,7 @@
-#·şÎñÅäÖÃ
+# æœåŠ¡ç«¯å£
 server:
   port: 6666
-#spring ÅäÖÃ
+#spring é…ç½®
 spring:
   cloud:
     nacos:
