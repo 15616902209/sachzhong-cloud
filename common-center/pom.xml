@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.sachzhong</groupId>
-    <artifactId>user-center</artifactId>
+    <artifactId>common-center</artifactId>
     <version>1.0</version>
-    <name>user-center</name>
-    <description>用户中心</description>
+    <name>common-center</name>
+    <description>公共中心</description>
 
 
 

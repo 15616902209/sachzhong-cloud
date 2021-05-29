@@ -6,11 +6,100 @@
 
     <groupId>org.sachzhong</groupId>
     <artifactId>sachzhong-cloud</artifactId>
-    <version>1.0-SNAPSHOT</version>
-
+    <packaging>pom</packaging>
+    <version>1.0</version>
+    <description>父项目统一管理通用配置</description>
+    <modules>
+        <!-- 实体和一些基本的工具类-->
+        <module>entity-core</module>
+        <!-- nacos服务注册中心和配置中心项目-->
+        <module>nacos-config</module>
+        <!-- 封装微服务内通用工具包 -->
+        <module>user-center</module>
+        <!-- 资源中心 -->
+        <module>resources-center</module>
+        <!-- 网关中心-->
+        <module>gateway-center</module>
+        <!-- 公共中心-->
+        <module>common-center</module>
+    </modules>
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
+        <!--项目编译环境-->
+        <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!--依赖版本管理-->
+        <fastjson.version>1.2.73</fastjson.version>
+        <commons-lang3.version>3.11</commons-lang3.version>
+        <spring-boot.version>2.2.10.RELEASE</spring-boot.version>
+        <spring-cloud.version>2020.0.2</spring-cloud.version>
+        <spring-cloud-alibaba.version>2.2.3.RELEASE</spring-cloud-alibaba.version>
+        <mysql-connector.version>8.0.16</mysql-connector.version>
+        <druid-spring-boot-starter.version>1.2.4</druid-spring-boot-starter.version>
+        <mybatis-plus-boot-starter.version>3.4.1</mybatis-plus-boot-starter.version>
     </properties>
+
+    <!-- 只做声明版本，并没有实际引用依赖 -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- SpringBoot -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- SpringCloud -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- SpringCloud Alibaba -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- MySQL数据库连接驱动 -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector.version}</version>
+            </dependency>
+            <!-- MybatisPlus Mybatis增强插件SpringBoot整合 -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus-boot-starter.version}</version>
+            </dependency>
+            <!-- Druid阿里数据库连接池 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid-spring-boot-starter.version}</version>
+            </dependency>
+            <!-- 阿里FastJson -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <!-- Apache的处理基本数据类型数据的工具包 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>

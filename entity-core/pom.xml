@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.sachzhong</groupId>
-    <artifactId>user-center</artifactId>
+    <artifactId>entity-core</artifactId>
     <version>1.0</version>
-    <name>user-center</name>
-    <description>用户中心</description>
+    <name>entity-core</name>
+    <description>存放实体通用工具类</description>
 
 
 
