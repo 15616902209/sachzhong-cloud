@@ -1,4 +1,4 @@
-package com.sachzhong.usercenter;
+package com.sachzhong.user;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

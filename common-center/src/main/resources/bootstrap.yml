@@ -1,0 +1,29 @@
+server:
+    port: 10004
+spring:
+  application:
+    name: common-center
+
+  #环境 dev/test/prod
+  profiles:
+    active: dev
+
+  #nacos配置
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        group: ${spring.profiles.active}
+        namespace: sachzhong
+      config:
+        # 配置文件的环境
+        group: ${spring.profiles.active}
+        # 配置文件的格式
+        file-extension: yaml
+        # 配置中心的地址
+        server-addr: 127.0.0.1:8848
+        # 配置文件prefix
+        prefix: ${spring.application.name}
+        #命名空间
+        namespace: sachzhong
+
