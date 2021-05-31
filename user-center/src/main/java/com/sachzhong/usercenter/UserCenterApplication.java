@@ -1,12 +1,8 @@
-package com.sachzhong.user;
+package com.sachzhong.usercenter;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-/**
- @Author: SachZhong
- @Description:
- @Date Created in 2021/5/29 16:05
- */
 @SpringBootApplication
 public class UserCenterApplication {
 

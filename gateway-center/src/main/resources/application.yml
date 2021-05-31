@@ -1,10 +1,6 @@
-# 服务端口
 server:
-  port: 6669
-#spring 配置
+    port: 10003
 spring:
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 127.0.0.1:8848
-
+  #环境 dev/test/prod
+  profiles:
+    active: dev
