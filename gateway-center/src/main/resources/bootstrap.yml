@@ -26,4 +26,35 @@ spring:
         prefix: ${spring.application.name}
         #命名空间
         namespace: sachzhong
+    gateway:
+      discovery:
+        locator:
+          enabled: true #表明gateway开启服务注册和发现的功能，并且自动根据服务发现为每一个服务创建了一个router，这个router将以服务名开头的请求路径转发到对应的服务
+          lower-case-service-id: true # 服务名小写
+      globalcors:
+        # 全局允许跨域访问
+        cors-configurations:
+          '[/**]':
+            allow-credentials: true
+            allowed-origins: "*"
+            allowed-headers: "*"
+            allowed-methods:
+              - OPTIONS
+              - GET
+              - POST
+              - PUT
+              - DELETE
+      routes:
+        - id: user-center-uri
+          uri: lb://user-center
+          predicates:
+            - Path=/user-center/**
+        - id: common-center-uri
+          uri: lb://common-center
+          predicates:
+            - Path=/common-center/**
+        - id: resources-center-uri
+          uri: lb://resources-center
+          predicates:
+            - Path=/resources-center/**
 

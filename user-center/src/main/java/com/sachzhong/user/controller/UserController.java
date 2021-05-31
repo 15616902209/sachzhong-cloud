@@ -1,8 +1,9 @@
-package com.sachzhong.gateway.controller;
+package com.sachzhong.user.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -12,12 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RefreshScope
-public class NacosController {
+@RequestMapping("user-center")
+public class UserController {
 
     @Value("${name}")
     private String name;
     @GetMapping("getName")
     public String getName(){
-        return name;
+        return "用户中心："+name;
     }
 }
