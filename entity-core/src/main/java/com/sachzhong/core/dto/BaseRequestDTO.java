@@ -1,21 +1,22 @@
 package com.sachzhong.core.dto;
 
 import com.sachzhong.core.constants.MessageCode;
+import lombok.Data;
 import org.apache.http.HttpStatus;
 
+import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
-
 /**
  * @Author: SachZhong
  * @Description:
  * @Date Created in 2021/5/31 19:35
  */
-public class BaseRequestDTO {
+@Data
+public class BaseRequestDTO implements Serializable {
     /**
      * 返回状态码，默认成功
      */
-    public int code = HttpStatus.SC_ACCEPTED;
+    public int code = HttpStatus.SC_OK;
     /**
      * 返回消息，默认为成功
      */
@@ -57,4 +58,14 @@ public class BaseRequestDTO {
 
     }
 
+    @Override
+    public String toString() {
+        return "BaseRequestDTO{" +
+                "code=" + code +
+                ", message='" + message + '\'' +
+                ", data=" + data +
+                ", pageInfo=" + pageInfo +
+                ", time=" + time +
+                '}';
+    }
 }
